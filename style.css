@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+
+:root {
+    --fundo: #f2f2ed;
+    --fundo-card: #ffffff;
+    --escuro: #161817;
+    --texto: #242725;
+    --cinza: #656a67;
+
+    --destaque: #17a589;
+    --destaque-escuro: #0c806a;
+    --destaque-claro: #dff5ef;
+
+    --borda: #d7dad7;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+
+.container {
+    width: min(1180px, 88%);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.topo {
+    background: var(--escuro);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.navegacao {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.logo span {
+    color: var(--destaque);
+}
+
+
+nav {
+    display: flex;
+    gap: 32px;
+}
+
+
+nav a {
+    color: #e1e1e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+
+nav a:hover {
+    color: var(--destaque);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    padding: 70px 0;
+}
+
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+
+.tag {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--destaque-escuro);
+    margin-bottom: 28px;
+}
+
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    max-width: 780px;
+}
+
+
+.hero h1 span {
+    color: var(--destaque);
+}
+
+
+.hero-texto {
+    font-size: 18px;
+    color: var(--cinza);
+    max-width: 650px;
+    margin-top: 32px;
+}
+
+
+.hero-botoes {
+    display: flex;
+    gap: 14px;
+    margin-top: 38px;
+}
+
+
+.botao {
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+
+.botao-principal {
+    background: var(--escuro);
+    color: #ffffff;
+}
+
+
+.botao-principal:hover {
+    background: var(--destaque);
+}
+
+
+.botao-secundario {
+    border: 1px solid var(--escuro);
+    color: var(--escuro);
+}
+
+
+.botao-secundario:hover {
+    background: var(--escuro);
+    color: #ffffff;
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.hero-foto {
+    position: relative;
+}
+
+
+.foto-moldura {
+    position: relative;
+    max-width: 410px;
+    margin-left: auto;
+}
+
+
+.foto-moldura::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -18px;
+    top: 18px;
+    border: 2px solid var(--destaque);
+    z-index: -1;
+}
+
+
+.foto-moldura img {
+    display: block;
+    width: 100%;
+    max-height: 540px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.detalhe-foto {
+    position: absolute;
+    bottom: -22px;
+    left: -35px;
+
+    background: var(--escuro);
+    color: white;
+
+    padding: 14px 20px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao {
+    padding: 110px 0;
+    border-top: 1px solid var(--borda);
+}
+
+
+.secao-clara {
+    background: #ffffff;
+}
+
+
+.numero-secao {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--destaque);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+.titulo-secao {
+    margin-bottom: 55px;
+}
+
+
+.titulo-secao h2,
+.sobre-grid h2,
+.contato h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(38px, 5vw, 58px);
+    letter-spacing: -2px;
+    margin-top: 8px;
+}
+
+
+.titulo-secao p {
+    max-width: 600px;
+    color: var(--cinza);
+    margin-top: 15px;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 80px;
+}
+
+
+.sobre-texto {
+    font-size: 19px;
+    color: #4c514e;
+}
+
+
+.sobre-texto p + p {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+.skills span {
+    border: 1px solid var(--borda);
+    background: var(--fundo);
+    padding: 12px 18px;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+
+.skills span:hover {
+    background: var(--destaque-claro);
+    border-color: var(--destaque);
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PROJETOS
+========================= */
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+.projeto-card {
+    position: relative;
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    padding: 38px;
+    min-height: 370px;
+    transition: 0.3s;
+}
+
+
+.projeto-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--destaque);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.07);
+}
+
+
+.projeto-numero {
+    position: absolute;
+    right: 30px;
+    top: 24px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    color: #d2d5d3;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+
+.projeto-tipo {
+    font-size: 11px;
+    color: var(--destaque-escuro);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.projeto-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+
+.projeto-card p {
+    color: var(--cinza);
+    margin-top: 15px;
+    max-width: 480px;
+}
+
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0;
+}
+
+
+.tecnologias span {
+    background: var(--destaque-claro);
+    color: var(--destaque-escuro);
+    font-size: 12px;
+    padding: 7px 10px;
+}
+
+
+.projeto-card a {
+    text-decoration: none;
+    color: var(--escuro);
+    font-weight: 700;
+}
+
+
+.projeto-card a:hover {
+    color: var(--destaque);
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+.contato {
+    background: var(--escuro);
+    color: #ffffff;
+    padding: 110px 0;
+}
+
+
+.numero-claro {
+    color: var(--destaque);
+}
+
+
+.contato-conteudo p {
+    color: #bfc3c1;
+    max-width: 650px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+.contato-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+
+.contato-links a {
+    color: #ffffff;
+    border: 1px solid #555b58;
+    padding: 14px 22px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+
+.contato-links a:hover {
+    background: var(--destaque);
+    border-color: var(--destaque);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #101211;
+    color: #8f9692;
+    padding: 25px 0;
+}
+
+
+.footer-conteudo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+
+/* =========================
+   MODAL DE E-MAIL
+========================= */
+
+.modal-email {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 999;
+}
+
+
+.modal-email.ativo {
+    display: flex;
+}
+
+
+.modal-conteudo {
+    position: relative;
+
+    width: min(500px, 100%);
+
+    background: #ffffff;
+
+    padding: 42px;
+
+    border: 1px solid var(--borda);
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+
+.fechar-modal {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 32px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    color: var(--escuro);
+}
+
+
+.fechar-modal:hover {
+    color: var(--destaque);
+}
+
+
+.modal-tag {
+    display: inline-block;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--destaque);
+}
+
+
+.modal-conteudo h3 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 32px;
+
+    margin-top: 8px;
+}
+
+
+.modal-conteudo p {
+    color: var(--cinza);
+
+    margin-top: 12px;
+}
+
+
+.email-box {
+    margin-top: 28px;
+
+    border: 1px solid var(--borda);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 12px 12px 12px 18px;
+
+    background: var(--fundo);
+}
+
+
+.email-box span {
+    font-size: 15px;
+
+    word-break: break-all;
+}
+
+
+.email-box button {
+    border: none;
+
+    background: var(--destaque);
+
+    color: #ffffff;
+
+    padding: 10px 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.email-box button:hover {
+    background: var(--destaque-escuro);
+}
+
+
+.mensagem-copia {
+    display: block;
+
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    color: var(--destaque-escuro);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+
+    .hero {
+        padding: 55px 0 90px;
+    }
+
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .hero-foto {
+        width: 85%;
+        margin: auto;
+    }
+
+
+    .foto-moldura {
+        margin: auto;
+    }
+
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 88%;
+    }
+
+
+    .navegacao {
+        min-height: 70px;
+    }
+
+
+    .hero {
+        min-height: auto;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+
+    .hero-texto {
+        font-size: 16px;
+    }
+
+
+    .hero-botoes {
+        flex-direction: column;
+    }
+
+
+    .botao {
+        text-align: center;
+    }
+
+
+    .secao {
+        padding: 80px 0;
+    }
+
+
+    .projeto-card {
+        padding: 28px;
+    }
+
+
+    .projeto-numero {
+        font-size: 30px;
+    }
+
+
+    .contato {
+        padding: 80px 0;
+    }
+
+
+    .contato-links {
+        flex-direction: column;
+    }
+
+
+    .contato-links a {
+        text-align: center;
+    }
+
+
+    .footer-conteudo {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+
+    .modal-conteudo {
+        padding: 35px 24px;
+    }
+
+
+    .email-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .email-box span {
+        text-align: center;
+    }
+
+
+    .email-box button {
+        width: 100%;
+    }
+
+}
